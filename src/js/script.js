@@ -1,30 +1,30 @@
-const botao = document.getElementById("gerar");
+const botao = document.getElementById("gerar")
 
-botao.addEventListener("click", gerarSenha);
+botao.addEventListener("click", gerarSenha)
 
 function gerarSenha() {
-  const tamanho = document.getElementById("tamanho").value;
-  const maiusculas = document.getElementById("maiusculas").checked;
-  const minusculas = document.getElementById("minusculas").checked;
-  const numeros = document.getElementById("numeros").checked;
-  const simbolos = document.getElementById("simbolos").checked;
+  const tamanho = document.getElementById("tamanho").value
+  const maiusculas = document.getElementById("maiusculas").checked
+  const minusculas = document.getElementById("minusculas").checked
+  const numeros = document.getElementById("numeros").checked
+  const simbolos = document.getElementById("simbolos").checked
 
   let caracteres = "";
 
-  if (maiusculas) caracteres += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  if (minusculas) caracteres += "abcdefghijklmnopqrstuvwxyz";
-  if (numeros) caracteres += "0123456789";
-  if (simbolos) caracteres += "!@#$&";
+  if (maiusculas) caracteres += "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  if (minusculas) caracteres += "abcdefghijklmnopqrstuvwxyz"
+  if (numeros) caracteres += "0123456789"
+  if (simbolos) caracteres += "!@#$&"
 
   if (caracteres === "") {
-    alert("Selecione pelo menos uma opção!");
-    return;
+    alert("Selecione pelo menos uma opção!")
+    return
   }
 
-  let senha = "";
+  let senha = ""
 
   for (let i = 0; i < tamanho; i++) {
-    const random = Math.floor(Math.random() * caracteres.length);
+    const random = Math.floor(Math.random() * caracteres.length)
     senha += caracteres[random]
   }
 
